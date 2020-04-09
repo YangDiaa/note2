@@ -6,25 +6,41 @@ np.menuData = [
                 title: '新建(N)',
                 shortcut: 'Ctrl+N',
                 enabled: true,
-                handler: function() { console.log('新建(N) menu clicked!'); }
+                handler: function() { 
+                    console.log('新建(N) clicked!'); 
+                }
+            },
+            {
+                title: '新窗口(W)',
+                shortcut: 'Ctrl+Shift+N',
+                enabled: true,
+                handler: function() { 
+                    console.log('新窗口(W) clicked!'); 
+                }
             },
             {
                 title: '打开(O)...',
                 shortcut: 'Ctrl+O',
                 enabled: true,
-                handler: function() { console.log('打开(O) menu clicked!'); }
+                handler: function() { 
+                    console.log('打开(O) clicked!'); 
+                }
             },
             {
                 title: '保存(S)',
                 shortcut: 'Ctrl+S',
                 enabled: true,
-                handler: function() { console.log('保存(S) menu clicked!'); }
+                handler: function() { 
+                    console.log('保存(S) clicked!'); 
+                }
             },
             {
                 title: '另存为(A)...',
-                shortcut: '',
+                shortcut: 'Ctrl+Shift+S',
                 enabled: true,
-                handler: function() { console.log('另存为(A) menu clicked!'); }
+                handler: function() { 
+                    console.log('另存为(A) clicked!'); 
+                }
             },
             {
                 title: 'hr',
@@ -36,13 +52,17 @@ np.menuData = [
                 title: '页面设置(U)...',
                 shortcut: '',
                 enabled: true,
-                handler: function() { console.log('页面设置(U) menu clicked!'); }
+                handler: function() { 
+                    console.log('页面设置(U) clicked!'); 
+                }
             },
             {
                 title: '打印(P)...',
                 shortcut: 'Ctrl+P',
                 enabled: true,
-                handler: function() { console.log('打印(P) menu clicked!'); }
+                handler: function() { 
+                    console.log('打印(P) clicked!'); 
+                }
             },
             {
                 title: 'hr',
@@ -54,7 +74,9 @@ np.menuData = [
                 title: '退出(X)',
                 shortcut: '',
                 enabled: true,
-                handler: function() { console.log('退出(X) menu clicked!'); }
+                handler: function() { 
+                    console.log('退出(X) clicked!'); 
+                }
             }
         ],
         width: '202px',
@@ -67,7 +89,9 @@ np.menuData = [
                 title: '撤销(U)',
                 shortcut: 'Ctrl+Z',
                 enabled: false,
-                handler: function() { console.log('撤销(U) menu clicked!'); }
+                handler: function() { 
+                    console.log('撤销(U) clicked!'); 
+                }
             },
             {
                 title: 'hr',
@@ -79,25 +103,33 @@ np.menuData = [
                 title: '剪切(T)',
                 shortcut: 'Ctrl+X',
                 enabled: true,
-                handler: function() { console.log('剪切(X) menu clicked!'); }
+                handler: function() { 
+                    console.log('剪切(X) clicked!'); 
+                }
             },
             {
                 title: '复制(C)',
                 shortcut: 'Ctrl+C',
                 enabled: false,
-                handler: function() { console.log('复制(C) menu clicked!'); }
+                handler: function() { 
+                    console.log('复制(C) clicked!'); 
+                }
             },
             {
                 title: '粘贴(P)',
                 shortcut: 'Ctrl+V',
-                enabled: false,
-                handler: function() { console.log('粘贴(P) menu clicked!'); }
+                enabled: true,
+                handler: function() { 
+                    console.log('粘贴(P) clicked!'); 
+                }
             },
             {
                 title: '删除(L)',
                 shortcut: 'Del',
                 enabled: false,
-                handler: function() { console.log('删除(L) menu clicked!'); }
+                handler: function() { 
+                    console.log('删除(L) clicked!'); 
+                }
             },
             {
                 title: 'hr',
@@ -110,55 +142,47 @@ np.menuData = [
                 shortcut: 'Ctrl+E',
                 enabled: true,
                 handler: function() { 
-                    $editor.bingSearch(); 
+                    console.log('使用 Bing 搜索 clicked!'); 
                 }
             },
             {
                 title: '查找(F)...',
                 shortcut: 'Ctrl+F',
                 enabled: false,
-                handler: function() {
-                    $dlgSearch.show(function(srch) {
-                        $editor.search(srch);
-                    });
+                handler: function() { 
+                    console.log('查找(F) clicked!'); 
                 }
             },
             {
                 title: '查找下一个(N)',
                 shortcut: 'F3',
                 enabled: false,
-                handler: function() { console.log('查找下一个(N) menu clicked!'); }
+                handler: function() { 
+                    console.log('查找下一个(N) clicked!'); 
+                }
+            },
+            {
+                title: '查找上一个(V)',
+                shortcut: 'Shift+F3',
+                enabled: false,
+                handler: function() { 
+                    console.log('查找上一个(V) clicked!'); 
+                }
             },
             {
                 title: '替换(R)...',
                 shortcut: 'Ctrl+H',
                 enabled: true,
-                handler: function() {
-                    $dlgReplace.show({
-                        searchHandle: function(e) {
-                            $editor.search(e);
-                        },
-                        replaceHandle: function(e) {
-                            $editor.replace(e);
-                        },
-                        replaceAllHandle: function(e) {
-                            $editor.replaceAll(e);
-                        }
-                    });
+                handler: function() { 
+                    console.log('替换(R) clicked!'); 
                 }
             },
             {
                 title: '转到(G)...',
                 shortcut: 'Ctrl+G',
                 enabled: true,
-                handler: function() {
-                    $dlgGoto.show({
-                        lineNum: $editor.getRow(),
-                        totalLine: $editor.getTotalLn(),
-                        gotoHandler: function(lineNum) {
-                            $editor.gotoLn(lineNum);
-                        }
-                    });
+                handler: function() { 
+                    console.log('转到(G) clicked!'); 
                 }
             },
             {
@@ -171,16 +195,16 @@ np.menuData = [
                 title: '全选(A)',
                 shortcut: 'Ctrl+A',
                 enabled: true,
-                handler: function() {
-                    $editor.selectAll();
+                handler: function() { 
+                    console.log('全选(A) clicked!'); 
                 }
             },
             {
                 title: '时间/日期(D)',
                 shortcut: 'F5',
                 enabled: true,
-                handler: function() {
-                    $editor.insertDataTime();
+                handler: function() { 
+                    console.log('时间/日期(D) clicked!'); 
                 }
             },
         ],
@@ -194,25 +218,8 @@ np.menuData = [
                 title: '自动换行(W)',
                 shortcut: '',
                 enabled: true,
-                handler: function() {
-                    np.bWrap = !np.bWrap;
-
-                    if(np.bWrap) {
-                        $statusBar.check(false);
-                        $editor.resize(false);
-                        $menuBar.enabled(3, 0, false);   // [查看]-[状态栏]菜单禁用
-                        $menuBar.enabled(1, 9, false);   // [编辑]-[转到]菜单禁用
-                    } 
-                    else {
-                        $statusBar.check(np.bShowStatusBar);
-                        $editor.resize(np.bShowStatusBar);
-                        $menuBar.enabled(3, 0, true);     // [查看]-[状态栏]菜单启用
-                        $menuBar.enabled(1, 9, true);     // [编辑]-[转到]菜单启用
-                        $menuBar.checked(3, 0, np.bShowStatusBar);
-                    }
-          
-                    $menuBar.checked(2, 0, np.bWrap);
-                    $editor.setWrap(np.bWrap);
+                handler: function() { 
+                    console.log('自动换行(W) clicked!'); 
                 }
             },
             {
@@ -236,14 +243,19 @@ np.menuData = [
         title: '查看(V)',
         menuItems: [
             {
+                title: '缩放(Z)',
+                shortcut: '',
+                enabled: true,
+                handler: function() { 
+                    console.log('缩放(Z) clicked!'); 
+                }
+            },
+            {
                 title: '状态栏(S)',
                 shortcut: '',
                 enabled: true,
-                handler: function() {
-                    np.bShowStatusBar = !np.bShowStatusBar;
-                    $statusBar.check(np.bShowStatusBar);
-                    $menuBar.checked(3, 0, np.bShowStatusBar);
-                    $editor.resize(np.bShowStatusBar);
+                handler: function() { 
+                    console.log('状态栏(S) clicked!'); 
                 }
             }
         ],
@@ -257,8 +269,16 @@ np.menuData = [
                 title: '查看帮助(H)',
                 shortcut: '',
                 enabled: true,
-                handler: function() {
-                    window.open('https://cn.bing.com/search?q=获取有关+windows+10+中的记事本的帮助', '_blank');
+                handler: function() { 
+                    console.log('查看帮助(H) clicked!'); 
+                }
+            },
+            {
+                title: '发送反馈(F)',
+                shortcut: '',
+                enabled: true,
+                handler: function() { 
+                    console.log('发送反馈(F) clicked!'); 
                 }
             },
             {
@@ -266,7 +286,7 @@ np.menuData = [
                 shortcut: '',
                 enabled: true,
                 handler: function() { 
-                    $dlgAbout.show(); 
+                    console.log('关于记事本(A) clicked!');
                 }
             },
         ],
